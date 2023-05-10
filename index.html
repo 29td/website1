@@ -26,7 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
  
 </head>
 
@@ -53,13 +52,14 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-      <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-9 text-center">
+    <div class="container position-relative" data-aos="fade-left" data-aos-delay="100">
+      <div class="row justify-content-center" style="display: flex;">
+        <div class="col-xl-7 col-lg-9 text-center" style="height: 70vh; margin-right: 10%; margin-top: 5%">
           <img src="assets/img/logo.png" class="img-fluid" alt="">
-          <h2>Convert unstructured data </h2>
-          <h2>into structured data to accelerate Digital Transformation</h2>
+          <h2 style="height:15vh">Convert unstructured data into structured data to accelerate Digital Transformation</h2>
+          <p>Deep Learning AI tool which leverages cutting-edge research based on deep learning methodologies to process documents similar to the way the human mind does. </p>
         </div>
+        <img src="assets/img/DL.png" data-aos="fade-down"  class="img-fluid" alt="" style="height: 40vh; width:50vh; border-radius: 50%; margin-top: 12%">
       </div>
     </div>
   </section><!-- End Hero -->
@@ -67,17 +67,16 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about" style="display: flex;">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
+        <div class="section-title" style="margin-left: 85%; width: 100%">
           <h2>About leriba.ai</h2>
+          <hr style="width: 7%; margin-left: 45%; border-top: 2px solid black;">
         </div>
-        <div class="row content">
+        <div class="row content" style="width: 100%; height: 40%">
           <div>
            <p>
-			For too long, humans have had to do the tedious work machines are best at: sorting through</p>
-			<center><p>information and making sense of it.</p></center>
 			<center><p> Automation used to work on only the most basic 20% of document types.</p></center>
             <center><p><strong>Until now!</strong></p></center>
             <p>leriba.ai leverages cutting-edge research based on deep learning methodologies to process documents similar to the way the human mind does. Taking into consideration layout, graphics, and semantics, our solution enables the precise answers required for complex</p>
@@ -86,51 +85,49 @@
         </div>
 
       </div>
-      <div class="contents">
-              <h3><strong>How it works</strong></h3>
+      <div class="contents" style="margin-top: 3%;">
+        <div>
+              <h3>How it works</h3>
               
                <center><p><strong>Able to process anything you throw at it</strong></p></center>
                <p>Using deep learning, leriba.ai can recognise and interpret text in virtually all documents. Get it to make sense of the longest paper trail or the deepest archive
               </p>
+          </div>
+              <div class="container" data-aos="fade-up" style="margin-top: 10px">
+
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box iconbox-blue">
+                      <h4><a href="">Unstructured Data</a></h4>
+                      <img src="assets/img/data.png" class="img-fluid" alt="">
+                  </div>
+        
+                      
+                    </div>
+                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box iconbox-orange ">
+                      
+                      <h4><a href="">Semi-structured Data</a></h4>
+                      <img src="assets/img/semistructured.png" class="img-fluid" alt="">
+        
+                    </div>
+                  </div>
+        
+                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box iconbox-pink">
+                      <h4><a href="">Structured Data</a></h4>
+                      <img src="assets/img/data1.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+        
+                  
+                </div>
+        
+                </div>
       </div>
+      
     </section><!-- End About Section -->
     <!-- ======= Counts Section ======= -->
-
-    <!-- ======= About Video Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <h4><a href="">Unstructured Data</a></h4>
-              <img src="assets/img/data.png" class="img-fluid" alt="">
-          </div>
-
-              
-            </div>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              
-              <h4><a href="">Semi-structured Data</a></h4>
-              <img src="assets/img/semistructured.png" class="img-fluid" alt="">
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <h4><a href="">Structured Data</a></h4>
-              <img src="assets/img/data1.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          
-        </div>
-
-        </div>
-  </section><!-- End Sevices Section -->
-
 
     <!-- ======= Testimonials Section ======= -->
     
@@ -218,7 +215,7 @@
 
           <div class="">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form class="php-email-form" method="POST" action="https://formspree.io/f/xrgjdpow">
               <div class="row gy-2 gx-md-3">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -237,7 +234,7 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>
-                <div class="text-center col-12"><button type="submit">Send Message</button></div>
+                <div class="text-center col-12"><button type="submit" class="text-center">Send Message</button></div>
               </div>
             </form>
 
@@ -267,7 +264,7 @@
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/company/leribaai/about/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->

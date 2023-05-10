@@ -1,8 +1,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
+
 body {
-  font-family: "Comfortaa", Comfortaa;
+  font-family: 'Comfortaa', cursive;
   color: #444444;
 }
 
@@ -213,10 +215,9 @@ h6 {
   color: #fff;
 }
 
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
+.getstarted:hover {
   color: #fff;
-  background: #3194db;
+  background: #11dbcf;
 }
 
 .navbar .dropdown ul {
@@ -434,7 +435,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Comfortaa", Comfortaa;
+  font-family: 'Comfortaa', cursive;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -550,7 +551,7 @@ section {
 .section-title h2 {
   font-size: 42px;
   font-weight: bold;
-  font-family: 'Comfortaa', Comfortaa, cursive;
+  font-family: 'Comfortaa', cursive;
   margin-bottom: 20px;
   padding-bottom: 0;
   color: #124265;
@@ -559,7 +560,7 @@ section {
 .section-title p {
   text-align: justify-all;
   margin-bottom: 0;
-  font-family: 'Comfortaa', Comfortaa, cursive;
+  font-family: 'Comfortaa', cursive;
   font-size: 14px;
   color: #919191;
 }
@@ -577,7 +578,7 @@ section {
 .about .content p {
   text-align: center;
   margin-bottom: 0;
-  font-family: 'Comfortaa', Comfortaa;
+  font-family: 'Comfortaa', cursive;
   font-size: 26px;
   color: #5e5e5e;
 }
@@ -590,7 +591,7 @@ section {
   text-align: center;
  font-size: 42px;
   font-weight: bold;
-  font-family: 'Comfortaa', Comfortaa, cursive;
+  font-family: 'Comfortaa', cursive;
   margin-bottom: 20px;
   padding-bottom: 0;
   color: #124265;;
@@ -605,7 +606,7 @@ section {
 .about .contents p {
   text-align: center;
   margin-bottom: 0;
-  font-family: 'Comfortaa', Comfortaa;
+  font-family: 'Comfortaa', cursive;
   font-size: 26px;
   color: #5e5e5e;
 }
@@ -1566,7 +1567,8 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3194db;
+  background: #11dbcf;
+  color:#fff;
 }
 
 @-webkit-keyframes animate-loading {

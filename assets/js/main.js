@@ -272,3 +272,15 @@
   new PureCounter();
 
 })()
+
+// Contact form section
+const submit = document.querySelector('.text-center');
+submit.addEventListener('click', (event) => {
+  const error = document.querySelector('.error-message');
+  const email = document.getElementById('email').value;
+  const islowerCase = (str) => str === str.toLowerCase();
+  if (!islowerCase(email)) {
+    event.preventDefault();
+    error.innerHTML = 'Please make sure the E-mail <br>doesn\'t have uppercase letters';
+  }
+});
