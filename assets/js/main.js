@@ -273,14 +273,64 @@
 
 })()
 
-// Contact form section
-const submit = document.querySelector('.text-center');
-submit.addEventListener('click', (event) => {
-  const error = document.querySelector('.error-message');
-  const email = document.getElementById('email').value;
-  const islowerCase = (str) => str === str.toLowerCase();
-  if (!islowerCase(email)) {
-    event.preventDefault();
-    error.innerHTML = 'Please make sure the E-mail <br>doesn\'t have uppercase letters';
+// Get the graphic container element
+const container = document.getElementById('graphic-container');
+
+// Create a function to create and move the graphic elements
+function createAndMoveGraphics() {
+  const graphic = document.createElement('div');
+  graphic.classList.add('graphic-element');
+  
+  // Set initial position randomly within the window
+  graphic.style.left = Math.random() * window.innerWidth + 'px';
+  graphic.style.top = Math.random() * window.innerHeight + 'px';
+
+  // Append the graphic element to the container
+  container.appendChild(graphic);
+
+  // Animate the graphic element
+  animateGraphic(graphic);
+}
+
+// Create multiple graphic elements at regular intervals
+setInterval(createAndMoveGraphics, 1000);
+
+// Animate the graphic element
+function animateGraphic(graphic) {
+  const xDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
+  const yDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
+
+  function move() {
+    // Get the current position of the graphic
+    let x = parseFloat(graphic.style.left || 0);
+    let y = parseFloat(graphic.style.top || 0);
+
+    // Update the position
+    x += getRandomNumber(1, 3) * xDirection; // Adjust the range to control the speed
+    y += getRandomNumber(1, 3) * yDirection; // Adjust the range to control the speed
+
+    // Check if the graphic is out of the window bounds
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    if (x < 0 || x > windowWidth || y < 0 || y > windowHeight) {
+      // If the graphic is out of bounds, remove it from the container
+      container.removeChild(graphic);
+    } else {
+      // Apply the new position
+      graphic.style.left = x + 'px';
+      graphic.style.top = y + 'px';
+
+      // Move the graphic on the next animation frame
+      requestAnimationFrame(move);
+    }
   }
-});
+
+  // Start the animation
+  requestAnimationFrame(move);
+}
+
+// Helper function to generate a random number within a given range
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}

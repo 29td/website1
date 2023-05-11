@@ -6,6 +6,86 @@
 body {
   font-family: 'Comfortaa', cursive;
   color: #444444;
+  margin: 0;
+  /* overflow: hidden; */
+}
+
+.bub {
+  width: 60px; 
+  height: 60px; 
+  border: 1px solid rgb(255,255,255); 
+  box-shadow: inset 1px -1px 5px blue ;
+  border-radius: 50%;
+  background-color: #2887b3; 
+  backdrop-filter: blur(2px); 
+  position: absolute; 
+  bottom: 100vh;
+  animation: bubble 3s ease-in infinite;
+}
+
+.bub ::before {
+  position: absolute;
+  content: "";
+  background-color: #111;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  top: 15px;
+  right: 13px;
+  box-shadow: 0px 0px 10px white;
+}
+
+.bub.a {
+  left: 10%;
+  animation: bubble 2s ease-in 1s infinite;
+}
+
+.bub.b {
+  left: 20%;
+  animation: bubble 1.5s ease-in 1.4s infinite;
+}
+
+.bub.c {
+  left: 40%;
+  animation: bubble 5s ease-in 3.8s infinite;
+}
+
+.bub.d {
+  left: 50%;
+  animation: bubble 1.8s ease-in .5s infinite;
+}
+
+.bub.e {
+  left: 70%;
+  animation: bubble 2.3s ease-in 2.5s infinite;
+}
+
+.bub.f {
+  left: 90%;
+  animation: bubble 2.5s ease-in 3s infinite;
+}
+
+.bub.g {
+  left: 100%;
+  animation: bubble 3s ease-in infinite;
+}
+
+.bub.h {
+  left: 60%;
+  animation: bubble 2.2s ease-in 2s infinite;
+}
+
+@keyframes bubble {
+  0%{
+    opacity: 0;
+  }
+  10%,93%{
+    opacity: 1;
+  }
+  100%{
+    transform: translate(90px,-700px);
+    display: none;
+  }
 }
 
 a {
@@ -217,7 +297,7 @@ h6 {
 
 .getstarted:hover {
   color: #fff;
-  background: #11dbcf;
+  background: blue;
 }
 
 .navbar .dropdown ul {
@@ -1503,6 +1583,12 @@ section {
   font-weight: 600;
 }
 
+hr {
+  width: 7%; 
+  margin-left: 45%; 
+  border-top: 2px solid black;
+}
+
 .contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
@@ -1514,6 +1600,23 @@ section {
   text-align: center;
   padding: 15px;
   font-weight: 600;
+}
+
+#graphic-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.graphic-element {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #2487ce;
+  border-radius: 50%;
+  /* Add any other desired styles */
 }
 
 .contact .php-email-form .loading {
@@ -1557,6 +1660,23 @@ section {
   padding: 10px 12px;
 }
 
+#logo-img {
+  transform: translateY(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-40px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
 .contact .php-email-form button[type=submit] {
   background: #2487ce;
   border: 0;
@@ -1567,7 +1687,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #11dbcf;
+  background: blue;
   color:#fff;
 }
 
@@ -1782,11 +1902,11 @@ section {
   color: #444444;
 }
 
-#footer .social-links a {
+#footer .social-icons a {
   font-size: 18px;
   display: inline-block;
-  background: #2487ce;
-  color: #fff;
+  background: #fff;
+  color: black;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1797,8 +1917,9 @@ section {
   transition: 0.3s;
 }
 
-#footer .social-links a:hover {
-  background: #3194db;
-  color: #fff;
+#footer .social-icons a:hover {
+  background: #fff;
+  color: black;
   text-decoration: none;
+  /* color: rgba(255, 255, 255, 1); */
 }
