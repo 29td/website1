@@ -276,52 +276,59 @@
 // Get the graphic container element
 const container = document.getElementById('graphic-container');
 
-// Create a function to create and move the graphic elements
-function createAndMoveGraphics() {
-  const graphic = document.createElement('div');
-  graphic.classList.add('graphic-element');
-  
+// Create a function to create and animate the invoice elements
+function createAndAnimateInvoices() {
+  const invoice = document.createElement('div');
+  invoice.classList.add('invoice');
+
   // Set initial position randomly within the window
-  graphic.style.left = Math.random() * window.innerWidth + 'px';
-  graphic.style.top = Math.random() * window.innerHeight + 'px';
+  invoice.style.left = Math.random() * window.innerWidth + 'px';
+  invoice.style.top = Math.random() * window.innerHeight + 'px';
 
-  // Append the graphic element to the container
-  container.appendChild(graphic);
+  // Add text or money value to the invoice
+  const text = getRandomText(); // Custom function to get random text or money value
+  invoice.innerHTML = text;
 
-  // Animate the graphic element
-  animateGraphic(graphic);
+  // Append the invoice element to the container
+  container.appendChild(invoice);
+
+  // Animate the invoice element
+  animateInvoice(invoice);
 }
 
-// Create multiple graphic elements at regular intervals
-setInterval(createAndMoveGraphics, 1000);
+// Create multiple invoice elements at regular intervals
+setInterval(createAndAnimateInvoices, 3000);
+setInterval(createAndAnimateInvoices, 4000);
+setInterval(createAndAnimateInvoices, 5000);
+// Add more intervals as needed
 
-// Animate the graphic element
-function animateGraphic(graphic) {
+// Animate the invoice element
+function animateInvoice(invoice) {
   const xDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
   const yDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
 
   function move() {
-    // Get the current position of the graphic
-    let x = parseFloat(graphic.style.left || 0);
-    let y = parseFloat(graphic.style.top || 0);
+    // Get the current position of the invoice
+    let x = parseFloat(invoice.style.left || 0);
+    let y = parseFloat(invoice.style.top || 0);
 
     // Update the position
     x += getRandomNumber(1, 3) * xDirection; // Adjust the range to control the speed
     y += getRandomNumber(1, 3) * yDirection; // Adjust the range to control the speed
 
-    // Check if the graphic is out of the window bounds
+    // Check if the invoice is out of the window bounds
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
     if (x < 0 || x > windowWidth || y < 0 || y > windowHeight) {
-      // If the graphic is out of bounds, remove it from the container
-      container.removeChild(graphic);
+      // If the invoice is out of bounds, remove it from the container
+      container.removeChild(invoice);
     } else {
       // Apply the new position
-      graphic.style.left = x + 'px';
-      graphic.style.top = y + 'px';
+      invoice.style.left = x + 'px';
+      invoice.style.top = y + 'px';
 
-      // Move the graphic on the next animation frame
+      // Move the invoice on the next animation frame
       requestAnimationFrame(move);
     }
   }
@@ -333,4 +340,11 @@ function animateGraphic(graphic) {
 // Helper function to generate a random number within a given range
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
+}
+
+// Custom function to get random text or money value for the invoice
+function getRandomText() {
+  const texts = ['Invoice 001', 'Invoice 002', 'Invoice 003', '$100', '$200', '$300'];
+  const randomIndex = Math.floor(Math.random() * texts.length);
+  return texts[randomIndex];
 }
