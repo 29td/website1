@@ -273,78 +273,78 @@
 
 })()
 
-// Get the graphic container element
-const container = document.getElementById('graphic-container');
+// // Get the graphic container element
+// const container = document.getElementById('graphic-container');
 
-// Create a function to create and animate the invoice elements
-function createAndAnimateInvoices() {
-  const invoice = document.createElement('div');
-  invoice.classList.add('invoice');
+// // Create a function to create and animate the invoice elements
+// function createAndAnimateInvoices() {
+//   const invoice = document.createElement('div');
+//   invoice.classList.add('invoice');
 
-  // Set initial position randomly within the window
-  invoice.style.left = Math.random() * window.innerWidth + 'px';
-  invoice.style.top = Math.random() * window.innerHeight + 'px';
+//   // Set initial position randomly within the window
+//   invoice.style.left = Math.random() * window.innerWidth + 'px';
+//   invoice.style.top = Math.random() * window.innerHeight + 'px';
 
-  // Add text or money value to the invoice
-  const text = getRandomText(); // Custom function to get random text or money value
-  invoice.innerHTML = text;
+//   // Add text or money value to the invoice
+//   const text = getRandomText(); // Custom function to get random text or money value
+//   invoice.innerHTML = text;
 
-  // Append the invoice element to the container
-  container.appendChild(invoice);
+//   // Append the invoice element to the container
+//   container.appendChild(invoice);
 
-  // Animate the invoice element
-  animateInvoice(invoice);
-}
+//   // Animate the invoice element
+//   animateInvoice(invoice);
+// }
 
-// Create multiple invoice elements at regular intervals
-setInterval(createAndAnimateInvoices, 3000);
-setInterval(createAndAnimateInvoices, 4000);
-setInterval(createAndAnimateInvoices, 5000);
-// Add more intervals as needed
+// // Create multiple invoice elements at regular intervals
+// setInterval(createAndAnimateInvoices, 3000);
+// setInterval(createAndAnimateInvoices, 4000);
+// setInterval(createAndAnimateInvoices, 5000);
+// // Add more intervals as needed
 
-// Animate the invoice element
-function animateInvoice(invoice) {
-  const xDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
-  const yDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
+// // Animate the invoice element
+// function animateInvoice(invoice) {
+//   const xDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
+//   const yDirection = Math.random() < 0.5 ? -1 : 1; // Randomize movement direction
 
-  function move() {
-    // Get the current position of the invoice
-    let x = parseFloat(invoice.style.left || 0);
-    let y = parseFloat(invoice.style.top || 0);
+//   function move() {
+//     // Get the current position of the invoice
+//     let x = parseFloat(invoice.style.left || 0);
+//     let y = parseFloat(invoice.style.top || 0);
 
-    // Update the position
-    x += getRandomNumber(1, 3) * xDirection; // Adjust the range to control the speed
-    y += getRandomNumber(1, 3) * yDirection; // Adjust the range to control the speed
+//     // Update the position
+//     x += getRandomNumber(1, 3) * xDirection; // Adjust the range to control the speed
+//     y += getRandomNumber(1, 3) * yDirection; // Adjust the range to control the speed
 
-    // Check if the invoice is out of the window bounds
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
+//     // Check if the invoice is out of the window bounds
+//     const windowWidth = window.innerWidth;
+//     const windowHeight = window.innerHeight;
 
-    if (x < 0 || x > windowWidth || y < 0 || y > windowHeight) {
-      // If the invoice is out of bounds, remove it from the container
-      container.removeChild(invoice);
-    } else {
-      // Apply the new position
-      invoice.style.left = x + 'px';
-      invoice.style.top = y + 'px';
+//     if (x < 0 || x > windowWidth || y < 0 || y > windowHeight) {
+//       // If the invoice is out of bounds, remove it from the container
+//       container.removeChild(invoice);
+//     } else {
+//       // Apply the new position
+//       invoice.style.left = x + 'px';
+//       invoice.style.top = y + 'px';
 
-      // Move the invoice on the next animation frame
-      requestAnimationFrame(move);
-    }
-  }
+//       // Move the invoice on the next animation frame
+//       requestAnimationFrame(move);
+//     }
+//   }
 
-  // Start the animation
-  requestAnimationFrame(move);
-}
+//   // Start the animation
+//   requestAnimationFrame(move);
+// }
 
-// Helper function to generate a random number within a given range
-function getRandomNumber(min, max) {
-  return Math.random() * (max - min) + min;
-}
+// // Helper function to generate a random number within a given range
+// function getRandomNumber(min, max) {
+//   return Math.random() * (max - min) + min;
+// }
 
-// Custom function to get random text or money value for the invoice
-function getRandomText() {
-  const texts = ['Invoice 001', 'Invoice 002', 'Invoice 003', '$100', '$200', '$300'];
-  const randomIndex = Math.floor(Math.random() * texts.length);
-  return texts[randomIndex];
-}
+// // Custom function to get random text or money value for the invoice
+// function getRandomText() {
+//   const texts = ['Invoice 001', 'Invoice 002', 'Invoice 003', '$100', '$200', '$300'];
+//   const randomIndex = Math.floor(Math.random() * texts.length);
+//   return texts[randomIndex];
+// }
