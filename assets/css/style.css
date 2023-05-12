@@ -1602,7 +1602,7 @@ hr {
   font-weight: 600;
 }
 
-#graphic-container {
+/* #graphic-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -1640,7 +1640,7 @@ hr {
   width: 10px;
   height: 10px;
   background-color: #f00;
-}
+} */
 
 .contact .php-email-form .loading {
   display: none;
